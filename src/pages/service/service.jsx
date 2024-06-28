@@ -1,85 +1,120 @@
-
-
-
-import React from 'react';
-var about=require("../../media/about-us.png");
+import React from "react";
+import { Link } from "react-router-dom";
 const Service = () => {
   return (
-    <div className="bg-white relative pt-20 pb-40 lg:pt-20 dark:bg-gray-900">
-    <div className="relative xl:container m-auto px-2 md:px-4 lg:px-4">
-    <h1 class="text-amber-600 font-semibold text-5xl">
-                  Who We are ?
-                </h1>
-      <h1 className="sm:mx-auto mt-0 sm:w-10/12 md:w-2/4 font-black text-blue-900 text-4xl text-center sm:text-5xl md:text-6xl lg:w-full lg:text-left xl:text-7xl dark:text-white">
-        Real People Delivering  <br className="lg:block hidden" />{" "}
-        <span className="relative text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300">
-          Real result .
-        </span>
-        
-      </h1>
-      
-      <div className="lg:flex">
-        <div className="relative mt-8 md:mt-16 space-y-8 sm:w-10/12 md:w-2/3 lg:ml-0 sm:mx-auto text-center lg:text-left lg:mr-auto lg:w-7/12">
-          <p className="sm:text-lg text-gray-700 dark:text-gray-300 lg:w-11/12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, placeat labore provident quia sapiente pariatur modi cumque dolor officiis iusto quam, aperiam ut dignissimos error harum minima itaque ratione ab.
-          </p>
-          
-          
-          <div class="flex w-3/4 flex-col p-4 bg-white shadow-md hover:shodow-lg rounded-2xl">
-	<div class="flex items-center justify-between">
-		<div class="flex items-center">
-    <img src="https://cdni.iconscout.com/illustration/premium/thumb/digital-marketing-idea-6191220-5096994.png?f=webp"
-				class="w-17 h-16 rounded-2xl p-1   text-blue-400 " alt="Marketing agency"
-				/>
-			<div class="flex flex-col ml-3">
-				<div class="font-medium leading-none">Marketing Agency</div>
-				<p class="text-sm text-gray-600 leading-none mt-1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam qui ipsam veritatis accusamus? Corporis praesentium, quas recusandae adipisci eius iusto deleniti labore! Accusantium impedit eius reiciendis recusandae exercitationem cumque dolores.
-				</p>
-			</div>
-		</div>
-		
-	</div>
-</div>
-<div class="flex w-3/4 flex-col p-4 bg-white shadow-md hover:shodow-lg rounded-2xl">
-	<div class="flex items-center justify-between">
-		<div class="flex items-center">
-			<img src="https://cdn-icons-png.flaticon.com/512/5979/5979484.png"
-				class="w-17 h-16 rounded-2xl p-1   text-blue-400 " alt="seo"
-				/>
-
-			<div class="flex flex-col ml-3">
-				<div class="font-medium leading-none ">SEO Service</div>
-				<p class="text-sm text-gray-500 leading-none mt-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo similique quaerat soluta sed quae qui assumenda magnam aspernatur natus minus? Modi, eum. Odit rem autem et. Quas corporis dolorem sed!
-				</p>
-			</div>
-		</div>
-		
-	
-	</div>
-</div>
-          
-        </div>
-        <div className="mt-3 md:mt-0 lg:absolute -right-10 lg:w-7/12">
-          <div className="relative w-full">
-            <div
-              aria-hidden="true"
-              className="absolute scale-75 md:scale-110 inset-0 m-auto w-full h-full md:w-72 md:h-96 rounded-full rotate-45 bg-gradient-to-r from-sky-500 to-cyan-300 blur-3xl"
-            />
-            <img
-              src={about} 
-              className="relative w-full"
-              alt="wath illustration"
-              loading="lazy"
-              width={320}
-              height={280}
-            />
+    <>
+      {/* component */}
+      <div className="py-16 bg-gray-50 overflow-hidden">
+        <div className="container m-auto px-6 space-y-10 text-gray-500 md:px-14">
+          <div>
+            <p id="we" className="text-center text-gray-600 text-lg font-semibold">
+              Featured Service
+            </p>
+            <h2 className="mt-4 text-center text-2xl text-gray-900 font-bold md:text-4xl">
+              You've got a business , we have got {" "}
+              <br className="lg:block" hidden="" /> Brilliant mindes
+            </h2>
+          </div>
+          <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-3">
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-0bXcU4tp3xQ8UKk0KyViSp0XJc9R_chQw&s"
+                  className="w-14"
+                  width={512}
+                  height={512}
+                  alt="burger illustration"
+                />
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Consultation
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    Ipsam corrupti voluptate atque. Porro earum sapiente
+                    repellendus vitae nemo, consequuntur eos sed eaque et,
+                    quibusdam, magni atque quia. Adipisci, obcaecati aliquid.
+                  </p>
+                </div>
+                <Link
+                  to="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://ocdigitalnetwork.com/wp-content/uploads/2018/04/h3-image-2.png"
+                  className="w-14"
+                  width={512}
+                  height={512}
+                  alt="burger illustration"
+                />
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Search Engine Optimization
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Pariatur incidunt laborum, asperiores minus suscipit illo
+                    quis officiis vel commodi natus nobis harum fugiat impedit
+                    ipsam nam porro iure, maxime accusantium!
+                  </p>
+                </div>
+                <Link
+                  to="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
+            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
+              <div className="relative p-8 space-y-8">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmxVUo9CGbr0yx-NbD_o7BVM3HVQ6GxMUxw&s"
+                  className="w-16"
+                  width={512}
+                  height={512}
+                  alt="burger illustration"
+                />
+                <div className="space-y-2">
+                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
+                    Social Media Managment
+                  </h5>
+                  <p className="text-sm text-gray-600">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Sequi, praesentium optio? Eaque deleniti animi, corrupti
+                    voluptas cupiditate totam eveniet earum. Doloremque atque
+                    ducimus similique vel accusantium voluptate illo
+                    exercitationem maxime?
+                  </p>
+                </div>
+                <Link
+                  to="#"
+                  className="flex justify-between items-center group-hover:text-yellow-600"
+                >
+                  <span className="text-sm">Read more</span>
+                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                    →
+                  </span>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-  
+    </>
   );
-}
+};
 
 export default Service;
