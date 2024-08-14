@@ -9,10 +9,10 @@ const Footer = () => {
     <>
   {/* component */}
   {/* This is an example component */}
-  <div className="bg-indigo-900 p-28 foot">
+  <div className=" p-28 foot bg">
 
     <div className="md:flex">
-      <div id="contact" className="md:w-full text-white bg-indigo-800 p-8 sm:rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg rounded-tl-lg flex justify-center">
+      <div id="contact" className="md:w-full text-white bg-indigo-900/[.37] p-8 sm:rounded-tr-lg md:rounded-tr-none md:rounded-bl-lg rounded-tl-lg flex justify-center">
         <div>
           <h1 className="text-5xl mb-5 font-bold text-center">
             Let's  <span className="text-pink-300">us</span> Build the <span className="text-pink-300">Bridge</span>

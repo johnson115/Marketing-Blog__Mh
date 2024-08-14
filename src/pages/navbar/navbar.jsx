@@ -1,15 +1,16 @@
 import { NavLink, Link } from "react-router-dom";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useState } from "react";
+import "../hero/hero.css";
 const Navbar = () => {
   const [Mobile, setMobile] = useState("hidden");
 
   return (
-    <nav className="bg-white border border-gray-200 dark:border-gray-700 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 shadow">
-      <div className="container flex flex-wrap justify-between items-center mx-auto">
+    <nav className=" fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+      <div className="container flex flex-wrap justify-between items-center mx-auto navv">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            Website
+          <span className="self-center text-xl font-semibold whitespace-nowrap logos">
+          DIgital Move Up
           </span>
         </Link>
         <div className="flex items-center">
@@ -40,36 +41,41 @@ const Navbar = () => {
         <div className={`w-full md:block md:w-auto ${Mobile}`} id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
-            
+            <AnchorLink href="#home">
               <NavLink
-                to="#Real "
-                className="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                to="/"
+                className=" route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
                 aria-current="page"
               >
                 Home
               </NavLink>
+              </AnchorLink>
             </li>
             <li>
               <AnchorLink
                 href="#we"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
               >
+                <NavLink to="/Service">
                 Service
+                </NavLink>
               </AnchorLink>
             </li>
             <li>
               <AnchorLink
                 href="#about"
-                className="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                className="route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
               >
-                About Us
+                <NavLink to="/about">
+                About us
+                </NavLink>
               </AnchorLink>
             </li>
 
             <li>
               <AnchorLink
                 href="#contact"
-                className="block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                className="route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
               >
                 Contact
               </AnchorLink>

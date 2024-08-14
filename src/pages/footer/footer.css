@@ -4,3 +4,9 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+.bg{
+  background-image: url(../../media/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

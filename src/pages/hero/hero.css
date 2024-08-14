@@ -1,0 +1,62 @@
+:root{
+  --primary:#3e82d2;
+  --secondary:#5919bd;
+  --last:#eb5ab1;
+  --success:#8e1474;
+}
+
+.bg{
+  background-image: url(../../media/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.describtion{
+  font-style: bold;
+}
+.logos{
+  color:var(--last);
+}
+#about{
+  text-transform: uppercase;
+}
+.mimi{
+  opacity: 0.57;
+}
+header{
+  padding-top: 70px;
+}
+.card{
+  height:470px;
+  text-align: center;
+  background-image: url(../../media/bg.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+nav{
+  height:70px;
+  background-color: rgba(0, 0, 0, 0.3);
+  
+}
+.navv{
+  margin-top:20px;
+}
+.route{
+  color:white;
+  
+}
+.route:hover{
+  color:var(--primary);
+  font-size: 19px;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
+}
+
+#tittle{
+  color: white;
+  text-transform: capitalize;
+}
