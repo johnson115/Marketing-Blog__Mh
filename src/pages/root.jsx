@@ -14,6 +14,7 @@ const Root = () => {
     <>
     <Navbar />
 <Hero />
+
 <Aboutus />
 <Partenar />
 <Service />

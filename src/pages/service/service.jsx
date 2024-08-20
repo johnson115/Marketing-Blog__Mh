@@ -1,119 +1,79 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useRef, useState } from "react";
+import "./service.css";
+import 'animate.css';
+
 const Service = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect(); // Optional: Disconnect observer once visible
+        }
+      },
+      { threshold: 0.1 } // Adjust this value as needed
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
+
+  // Image imports
+  const img1 = require("../../media/1.png");
+  const img2 = require("../../media/2.png");
+  const img3 = require("../../media/3.png");
+  const img4 = require("../../media/4.png");
+  const img5 = require("../../media/5.png");
+  const img6 = require("../../media/6.png");
+  const img7 = require("../../media/7.png");
+  const img8 = require("../../media/8.png");
+
   return (
-    <>
-      {/* component */}
-      <div className="py-16 bg-gray-50 overflow-hidden">
-        <div className="container m-auto px-6 space-y-10 text-gray-500 md:px-14">
-          <div>
-            <p id="we" className="text-center text-gray-600 text-lg font-semibold">
-              Featured Service
-            </p>
-            <h2 className="mt-4 text-center text-2xl text-gray-900 font-bold md:text-4xl">
-              You've got a business , we have got {" "}
-              <br className="lg:block" hidden="" /> Brilliant mindes
-            </h2>
-          </div>
-          <div className="mt-16 grid border divide-x divide-y rounded-xl overflow-hidden sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-3">
-            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-              <div className="relative p-8 space-y-8">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRA-0bXcU4tp3xQ8UKk0KyViSp0XJc9R_chQw&s"
-                  className="w-14"
-                  width={512}
-                  height={512}
-                  alt="burger illustration"
-                />
-                <div className="space-y-2">
-                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    Consultation
-                  </h5>
-                  <p className="text-sm text-gray-600">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Ipsam corrupti voluptate atque. Porro earum sapiente
-                    repellendus vitae nemo, consequuntur eos sed eaque et,
-                    quibusdam, magni atque quia. Adipisci, obcaecati aliquid.
-                  </p>
-                </div>
-                <Link
-                  to="#"
-                  className="flex justify-between items-center group-hover:text-yellow-600"
-                >
-                  <span className="text-sm">Read more</span>
-                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    →
-                  </span>
-                </Link>
+    <div ref={sectionRef} className="py-16 bg-gray-50 overflow-hidden">
+      <div className="container m-auto px-6 space-y-10 text-gray-500 md:px-14">
+        <div>
+          <p id="we" className="text-center text-gray-600 text-lg font-semibold">
+            Our Services
+          </p>
+          <h2 className="mt-4 text-center text-2xl text-gray-900 font-bold md:text-4xl">
+            Votre Entreprise, Notre Expertise
+          </h2>
+        </div>
+        <div className="mt-16 grid divide-x divide-y rounded-xl overflow-hidden justify-center sm:grid-cols-2 lg:divide-y-0 lg:grid-cols-3 xl:grid-cols-4">
+          {[
+            { img: img1, title: "Sponsoring & Publicités", subtitle: "Maximisez la visibilité de votre marque", description: "avec des campagnes de sponsoring et de publicité ciblées, conçues pour atteindre efficacement votre audience et optimiser votre retour sur investissement." },
+            { img: img2, title: "Développement Web & Mobile", subtitle: "Créez des sites web et des applications mobiles", description: "performants et esthétiques, répondant aux besoins de votre entreprise." },
+            { img: img3, title: "Optimisation SEO", subtitle: "", description: "Améliorez la visibilité de votre site web pour attirer davantage de visiteurs qualifiés." },
+            { img: img4, title: "Gestion des Réseaux Sociaux", subtitle: "", description: "Développez votre présence en ligne avec une gestion efficace de vos réseaux sociaux." },
+            { img: img5, title: "Marketing de Contenu", subtitle: "", description: "Créez du contenu pertinent et engageant pour attirer et convertir votre audience." },
+            { img: img6, title: "Design Graphique", subtitle: "", description: "Associez élégance et efficacité dans tous vos visuels pour renforcer l’identité de votre marque." },
+            { img: img7, title: "Production Vidéo", subtitle: "", description: "Attirez et engagez votre public avec des vidéos professionnelles qui racontent l’histoire de votre marque." },
+            { img: img8, title: "Consulting en Stratégie Digitale", subtitle: "", description: "Optimisez votre présence en ligne avec des conseils stratégiques adaptés à vos objectifs commerciaux." }
+          ].map((service, index) => (
+            <article key={index} className={`card ${isVisible ? 'animate__animated animate__fadeInDownBig' : ''}`}>
+              <div className="temporary_text">
+                <img src={service.img} alt="service" />
               </div>
-            </div>
-            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-              <div className="relative p-8 space-y-8">
-                <img
-                  src="https://ocdigitalnetwork.com/wp-content/uploads/2018/04/h3-image-2.png"
-                  className="w-14"
-                  width={512}
-                  height={512}
-                  alt="burger illustration"
-                />
-                <div className="space-y-2">
-                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    Search Engine Optimization
-                  </h5>
-                  <p className="text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Pariatur incidunt laborum, asperiores minus suscipit illo
-                    quis officiis vel commodi natus nobis harum fugiat impedit
-                    ipsam nam porro iure, maxime accusantium!
-                  </p>
-                </div>
-                <Link
-                  to="#"
-                  className="flex justify-between items-center group-hover:text-yellow-600"
-                >
-                  <span className="text-sm">Read more</span>
-                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    →
-                  </span>
-                </Link>
+              <div className="card_content">
+                <span className="card_title">{service.title}</span>
+                <span className="card_subtitle">{service.subtitle}</span>
+                <p className="card_description">{service.description}</p>
               </div>
-            </div>
-            <div className="relative group bg-white transition hover:z-[1] hover:shadow-2xl">
-              <div className="relative p-8 space-y-8">
-                <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFmxVUo9CGbr0yx-NbD_o7BVM3HVQ6GxMUxw&s"
-                  className="w-16"
-                  width={512}
-                  height={512}
-                  alt="burger illustration"
-                />
-                <div className="space-y-2">
-                  <h5 className="text-xl text-gray-800 font-medium transition group-hover:text-yellow-600">
-                    Social Media Managment
-                  </h5>
-                  <p className="text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Sequi, praesentium optio? Eaque deleniti animi, corrupti
-                    voluptas cupiditate totam eveniet earum. Doloremque atque
-                    ducimus similique vel accusantium voluptate illo
-                    exercitationem maxime?
-                  </p>
-                </div>
-                <Link
-                  to="#"
-                  className="flex justify-between items-center group-hover:text-yellow-600"
-                >
-                  <span className="text-sm">Read more</span>
-                  <span className="-translate-x-4 opacity-0 text-2xl transition duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                    →
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
+            </article>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

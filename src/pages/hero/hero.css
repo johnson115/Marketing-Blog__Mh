@@ -14,31 +14,42 @@
 .describtion{
   font-style: bold;
 }
+.kiki{
+  margin-top: -20px;
+}
+.mah{
+  display: flex;
+  width:70px;
+  align-items: center;
+  height:70px; 
+  margin-top: -20px;
+}
 .logos{
-  color:var(--last);
+  color:#67e4f9;
+  margin-top: -20px;
 }
 #about{
   text-transform: uppercase;
 }
 .mimi{
-  opacity: 0.57;
+  opacity: 1;
 }
 header{
   padding-top: 70px;
 }
-.card{
-  height:470px;
-  text-align: center;
-  background-image: url(../../media/bg.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+#partenar{
+  color: #67e4f9;
 }
+
+
+
+
 nav{
   height:70px;
   background-color: rgba(0, 0, 0, 0.3);
   
 }
+
 .navv{
   margin-top:20px;
 }
@@ -47,7 +58,15 @@ nav{
   
 }
 .route:hover{
-  color:var(--primary);
+  color:var(--last);
+  font-size: 19px;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
+}
+ .active{ color: var(--primary); 
   font-size: 19px;
   transition: all 0.7s;
   -webkit-transition: all 0.7s;
@@ -59,4 +78,12 @@ nav{
 #tittle{
   color: white;
   text-transform: capitalize;
+}
+@media screen and (max-width:900px){
+  .naving{
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .kiki{
+    margin-top: 0;
+  }
 }

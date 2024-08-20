@@ -4,15 +4,19 @@ import { useState } from "react";
 import "../hero/hero.css";
 const Navbar = () => {
   const [Mobile, setMobile] = useState("hidden");
+  const looog =require("../../media/logo (2).png");
 
   return (
-    <nav className=" fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+    <nav className=" fixed w-full z-20 top-0 start-0 ">
       <div className="container flex flex-wrap justify-between items-center mx-auto navv">
+        <AnchorLink href="#home">
         <Link to="/" className="flex items-center">
+        <img src={looog} className="mah" alt="logo" />
           <span className="self-center text-xl font-semibold whitespace-nowrap logos">
           DIgital Move Up
           </span>
         </Link>
+        </AnchorLink>
         <div className="flex items-center">
           <button
             id="menu-toggle"
@@ -38,7 +42,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className={`w-full md:block md:w-auto ${Mobile}`} id="mobile-menu">
+        <div className={`w-full naving md:block md:w-auto ${Mobile}`} id="mobile-menu">
           <ul className="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <li>
             <AnchorLink href="#home">
@@ -66,7 +70,7 @@ const Navbar = () => {
                 href="#about"
                 className="route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
               >
-                <NavLink to="/about">
+                <NavLink to="/about-us">
                 About us
                 </NavLink>
               </AnchorLink>
@@ -77,7 +81,9 @@ const Navbar = () => {
                 href="#contact"
                 className="route block py-2 pr-4 pl-3 text-white border-b border-gray-100   md:border-0  md:p-0 "
               >
+                <NavLink to="/contact">
                 Contact
+                </NavLink>
               </AnchorLink>
             </li>
           </ul>

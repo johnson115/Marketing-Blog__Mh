@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import Aboutus from './pages/service/About';
 import Service from './pages/service/service';
+import Footer from './pages/footer/footer';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Hero />}/>
       <Route path="/about-us" exact element={<Aboutus />}/>
       <Route path="/Service" element={<Service />}/>
+      <Route path="/contact" element={<Footer />}/>
       
 
       
